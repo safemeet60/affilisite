@@ -2,7 +2,7 @@ import React from 'react';
 import { AlertTriangle, ArrowRight, Crown, ExternalLink, Search } from 'lucide-react';
 
 // lucide-reactにないため、自作のYouTubeアイコンコンポーネントを作成
-const YoutubeIcon = ({ className, size = 24 }) => (
+const YoutubeIcon = ({ className, size = 24 }: { className?: string; size?: number }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}

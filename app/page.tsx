@@ -15,6 +15,35 @@ const YoutubeIcon = ({ className, size = 24 }: { className?: string; size?: numb
   </svg>
 );
 
+// ★ここに紹介したいYouTube動画のデータを入力します★
+// id: YouTubeのURL「https://www.youtube.com/watch?v=〇〇〇」の「〇〇〇」の部分を入力してください。
+const videos = [
+  {
+    rank: 1,
+    id: "_Nth3ZYlORs", // ←ここを実際の動画IDに書き換える
+    title: "ぴなこちゃんの夜の公園散歩",
+    views: "150万回超",
+    description: "薄着の季節にこれは反則…！カメラアングルが神がかっているとコメント欄でも話題沸騰中の動画です。見逃し厳禁！",
+    color: "text-yellow-500", // 王冠の色
+  },
+  {
+    rank: 2,
+    id: "Q51ycxRA8RY", // ←ここを実際の動画IDに書き換える
+    title: "はすこちゃんの五右衛門風呂",
+    views: "98万回超",
+    description: "無職の車中泊女子が人生初【五右衛門風呂】に入ってみたら火加減難しすぎた",
+    color: "text-gray-300",
+  },
+  {
+    rank: 3,
+    id: "sFrZPfoyWOk", // ←ここを実際の動画IDに書き換える
+    title: "【消された伝説のノーブラ散歩】東京スカイツリー",
+    views: "85万回超",
+    description: "本人は全く気づいていない様子ですが、視聴者からは「見えてる！」のコメントが殺到。アーカイブがいつ消されるか分からない必見動画です。",
+    color: "text-orange-500",
+  }
+];
+
 export default function App() {
   return (
     <div className="bg-gray-900 text-gray-200 font-sans min-h-screen">
@@ -51,6 +80,7 @@ export default function App() {
           <p className="text-center text-sm text-pink-200 mb-4">
             モザイクなし、規制なしの「本番」が見たいなら、DMMのプレミアムVODがおすすめ。今なら初回30日間無料でグラビア・大人向け作品が見放題！
           </p>
+          {/* ↓ここにDMMアフィリエイトのリンク（URL）を入れます */}
           <a href="https://al.dmm.co.jp/..." target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-pink-600 hover:bg-pink-500 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-lg transition duration-200">
             無料で過激な動画を見る（18禁） <ArrowRight className="ml-2" size={20} />
           </a>
@@ -61,43 +91,43 @@ export default function App() {
           <Crown className="text-yellow-500 mr-2" size={24} /> 殿堂入り再生回数ランキング
         </h3>
 
-        {/* 第1位 */}
-        <div className="bg-gray-800 rounded-lg shadow-lg mb-8 overflow-hidden border border-gray-700 transition hover:scale-[1.02]">
-          <div className="bg-gray-950 px-4 py-2 border-b border-gray-700 flex justify-between items-center">
-            <span className="font-bold text-yellow-500 flex items-center">1位：〇〇ちゃんの夜の公園散歩</span>
-            <span className="text-xs bg-gray-700 px-2 py-1 rounded text-gray-300">再生数: 150万回超</span>
-          </div>
-          <div className="p-4">
-            {/* YouTubeサムネイルのダミー */}
-            <div className="w-full aspect-video bg-black flex flex-col items-center justify-center rounded-md mb-4 relative overflow-hidden group cursor-pointer border border-gray-600">
-              <YoutubeIcon className="text-red-600 mb-2 group-hover:scale-110 transition duration-300" size={60} />
-              <span className="text-gray-500 text-sm">動画サムネイル画像</span>
+        {/* 登録した動画リストを自動で表示 */}
+        {videos.map((video) => (
+          <div key={video.rank} className="bg-gray-800 rounded-lg shadow-lg mb-8 overflow-hidden border border-gray-700 transition hover:scale-[1.02]">
+            <div className="bg-gray-950 px-4 py-3 border-b border-gray-700 flex justify-between items-center">
+              <span className={`font-bold ${video.color} flex items-center`}>
+                {video.rank === 1 && <Crown className="mr-1" size={18} />}
+                {video.rank}位：{video.title}
+              </span>
+              <span className="text-xs bg-gray-700 px-2 py-1 rounded text-gray-300">再生数: {video.views}</span>
             </div>
-            <p className="text-sm text-gray-300 mb-4">
-              薄着の季節にこれは反則…！カメラアングルが神がかっているとコメント欄でも話題沸騰中の動画です。特に3分20秒あたりのハプニングは見逃し厳禁！
-            </p>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition duration-200 text-sm">
-              YouTubeでこの動画を見る <ExternalLink className="ml-2" size={16} />
-            </a>
-          </div>
-        </div>
+            <div className="p-4">
+              
+              {/* サムネイル画像（クリックでYouTubeへ飛ぶ） */}
+              <a href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer" className="block w-full aspect-video bg-black flex-col items-center justify-center rounded-md mb-4 relative overflow-hidden group border border-gray-600">
+                {/* YouTubeから自動でサムネイル画像を取得して表示 */}
+                <img 
+                  src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`} 
+                  alt={video.title}
+                  className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition duration-300"
+                />
+                {/* 中央に再生ボタンを配置 */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                  <YoutubeIcon className="text-red-600 drop-shadow-[0_0_8px_rgba(255,0,0,0.8)] group-hover:scale-110 transition duration-300" size={64} />
+                  <span className="text-white font-bold mt-2 opacity-0 group-hover:opacity-100 transition duration-300">YouTubeで見る</span>
+                </div>
+              </a>
 
-        {/* 第2位 */}
-        <div className="bg-gray-800 rounded-lg shadow-lg mb-8 overflow-hidden border border-gray-700 transition hover:scale-[1.02]">
-          <div className="bg-gray-950 px-4 py-2 border-b border-gray-700 flex justify-between items-center">
-            <span className="font-bold text-gray-300 flex items-center">2位：都内某所・すっぴん買い出し</span>
-            <span className="text-xs bg-gray-700 px-2 py-1 rounded text-gray-300">再生数: 98万回超</span>
-          </div>
-          <div className="p-4">
-            <div className="w-full aspect-video bg-black flex flex-col items-center justify-center rounded-md mb-4 relative overflow-hidden group cursor-pointer border border-gray-600">
-              <YoutubeIcon className="text-red-600 mb-2 group-hover:scale-110 transition duration-300" size={60} />
-              <span className="text-gray-500 text-sm">動画サムネイル画像</span>
+              <p className="text-sm text-gray-300 mb-4 leading-relaxed">
+                {video.description}
+              </p>
+
+              <a href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-4 rounded transition duration-200 text-sm">
+                YouTubeでこの動画を見る <ExternalLink className="ml-2" size={16} />
+              </a>
             </div>
-            <p className="text-sm text-gray-300 mb-4">
-              完全プライベート風の映像。揺れが凄すぎてYouTubeの年齢制限に引っかかるギリギリのラインを攻めています。
-            </p>
           </div>
-        </div>
+        ))}
 
         {/* 【重要】記事中アフィリエイト誘導 */}
         <div className="my-10 p-6 bg-gray-800 border-2 border-dashed border-blue-500 rounded-lg text-center">
@@ -106,6 +136,7 @@ export default function App() {
             「こんな子と実際に遊んでみたい…」<br />
             最近、動画に出ているような素人系女子と出会える隠れ家アプリが話題です。登録は無料でプロフ見放題！
           </p>
+          {/* ↓ここに出会い系アフィリエイトのリンク（URL）を入れます */}
           <a href="#" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-200">
             ナイショで出会いを探す <Search className="ml-2" size={18} />
           </a>

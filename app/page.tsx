@@ -188,6 +188,14 @@ export default function App() {
           </div>
         ))}
 
+        {/* 出会い系アフィリエイトバナー（10位直後） */}
+        <div className="mb-10 flex flex-col items-center gap-2">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B1OTP+9IYGI+1J1E+5YJRL" rel="nofollow">
+            <img style={{ border: 0 }} width={468} height={60} alt="" src="https://www23.a8.net/svt/bgt?aid=260419309016&wid=001&eno=01&mid=s00000007133001001000&mc=1" />
+          </a>
+          <img style={{ border: 0 }} width={1} height={1} src="https://www14.a8.net/0.gif?a8mat=4B1OTP+9IYGI+1J1E+5YJRL" alt="" />
+        </div>
+
         {/* 【重要】記事中アフィリエイト誘導 */}
         <div className="my-10 p-6 bg-gray-800 border-2 border-dashed border-blue-500 rounded-lg text-center">
           <h4 className="text-xl font-bold text-blue-400 mb-3">画面越しじゃ満足できないあなたへ</h4>

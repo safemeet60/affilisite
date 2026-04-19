@@ -20,26 +20,26 @@ const YoutubeIcon = ({ className, size = 24 }: { className?: string; size?: numb
 const videos = [
   {
     rank: 1,
-    id: "_Nth3ZYlORs", // ←ここを実際の動画IDに書き換える
-    title: "ぴなこちゃんの夜の公園散歩",
-    views: "150万回超",
-    description: "薄着の季節にこれは反則…！カメラアングルが神がかっているとコメント欄でも話題沸騰中の動画です。見逃し厳禁！",
-    color: "text-yellow-500", // 王冠の色
+    id: "Q51ycxRA8RY",
+    title: "はすこちゃんの五右衛門風呂",
+    views: "711万回超",
+    description: "無職の車中泊女子が人生初の五右衛門風呂に挑戦！火加減が難しすぎて悪戦苦闘する姿がとにかくかわいい。711万再生の納得の神動画。",
+    color: "text-yellow-500",
   },
   {
     rank: 2,
-    id: "Q51ycxRA8RY", // ←ここを実際の動画IDに書き換える
-    title: "はすこちゃんの五右衛門風呂",
-    views: "98万回超",
-    description: "無職の車中泊女子が人生初【五右衛門風呂】に入ってみたら火加減難しすぎた",
+    id: "_Nth3ZYlORs",
+    title: "ぴなこちゃんの夜の散歩",
+    views: "10万回超",
+    description: "夜の公園を薄着で散歩する映像がじわじわ再生数を伸ばしている注目作。カメラアングルが絶妙すぎるとコメント欄でも話題沸騰中！",
     color: "text-gray-300",
   },
   {
     rank: 3,
     id: "sFrZPfoyWOk",
     title: "【消された伝説のノーブラ散歩】東京スカイツリー",
-    views: "85万回超",
-    description: "本人は全く気づいていない様子ですが、視聴者からは「見えてる！」のコメントが殺到。アーカイブがいつ消されるか分からない必見動画です。",
+    views: "1.4万回超",
+    description: "まだ再生数は少ないが内容は本物。本人は全く気づいていない様子ながら視聴者からは「見えてる！」のコメントが殺到。消される前に急いで見て。",
     color: "text-orange-500",
   },
   {

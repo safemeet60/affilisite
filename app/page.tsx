@@ -118,8 +118,11 @@ export default function App() {
             今、YouTubeで一番ヤバい。<br />
             <span className="text-pink-500" style={{ textShadow: '0 0 5px #ec4899, 0 0 10px #ec4899' }}>ハプニング必至</span>の散歩動画ランキング
           </h2>
-          <p className="text-gray-400 mb-6 text-sm md:text-base">
+          <p className="text-gray-400 mb-4 text-sm md:text-base">
             再生回数急上昇中！消される前に絶対見ておきたい、ギリギリを攻めたトレンド動画を厳選まとめ。
+          </p>
+          <p className="text-gray-500 text-xs leading-relaxed">
+            待ちブラ / ノーブラ散歩 / ハプニング / 人妻 / 女子大生 / ナンパ / 即出会い / xvideo超え素人 / 胸チラ / 透け / トランプ動画 まとめ
           </p>
         </div>
       </section>

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh repo *)",
+      "WebFetch(domain:melodic-pithivier-f625c8.netlify.app)",
+      "WebFetch(domain:github.com)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(winget install *)",
+      "Bash(git pull *)",
+      "Bash(git checkout *)",
+      "Bash(git rebase *)",
+      "Bash(npm run *)"
+    ]
+  }
+}

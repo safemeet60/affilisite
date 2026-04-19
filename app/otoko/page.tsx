@@ -1,6 +1,6 @@
 import React from 'react';
-import { AlertTriangle, ArrowRight, Crown, ExternalLink, Search } from 'lucide-react';
 import Link from 'next/link';
+import { AlertTriangle, ArrowRight, Crown, ExternalLink } from 'lucide-react';
 import ViewCount from '../components/ViewCount';
 
 const YoutubeIcon = ({ className, size = 24 }: { className?: string; size?: number }) => (
@@ -19,95 +19,55 @@ const YoutubeIcon = ({ className, size = 24 }: { className?: string; size?: numb
 const videos = [
   {
     rank: 1,
-    id: "x3PlvZAd30E",
-    title: "ナンパ動画 第1位",
+    id: "Vu3TpHA8L24",
+    title: "男磨き動画 第1位",
     views: "－",
-    description: "街中でのナンパ動画。自然な声かけから展開する様子がリアルすぎてコメ欄が大盛り上がり。こんな出会いが実在するのかと話題騒然。",
+    description: "モテる男になるための本質を突いた動画。「これを見てから人生変わった」という報告がコメ欄に続々。ナンパや出会いに活かせる実践的な内容が満載。",
     color: "text-yellow-500",
   },
   {
     rank: 2,
-    id: "mp3UOsvxbfM",
-    title: "ナンパ動画 第2位",
+    id: "QWTT8njVzv0",
+    title: "男磨き動画 第2位",
     views: "－",
-    description: "ナンパ師の神トーク術が炸裂。断られてもへこたれない姿勢と最終的な展開に視聴者が釘付け。「俺もやってみたい」とコメントが殺到。",
+    description: "外見・内面・トーク術を全方位から磨くノウハウを惜しみなく公開。「もっと早く見ておけばよかった」と後悔必至の神動画。",
     color: "text-gray-300",
   },
   {
     rank: 3,
-    id: "_h9rDmJfL4c",
-    title: "ナンパ動画 第3位",
+    id: "sj1_mHye-ow",
+    title: "男磨き動画 第3位",
     views: "－",
-    description: "一見普通のナンパ動画に見えて、途中からの急展開が神すぎる。リピーターが続出している隠れた名作。必見。",
+    description: "女性目線でリアルに語るモテる男の条件。「こんなことが大事だったのか」と目からウロコの連続。即実践できるテクニックが詰まっている。",
     color: "text-orange-500",
   },
   {
     rank: 4,
-    id: "3YX0XBOClbA",
-    title: "ナンパ動画 第4位",
+    id: "KqcqIaenX1A",
+    title: "男磨き動画 第4位",
     views: "－",
-    description: "声をかけた相手の反応が想定外すぎる。「これ本当に偶然？」と議論になった問題作。コメ欄は修羅場状態。",
+    description: "見た目・清潔感・立ち振る舞い、全部まとめて底上げできる神回。「週1で見返している」というリピーター続出の鉄板コンテンツ。",
     color: "text-pink-400",
   },
   {
     rank: 5,
-    id: "Cmpqs6-7sN0",
-    title: "ナンパ動画 第5位",
+    id: "_tfNjHOgfw4",
+    title: "男磨き動画 第5位",
     views: "－",
-    description: "王道ナンパ動画だが完成度が高すぎる。テクニックのレベルが別次元で、見るだけで勉強になると評判。",
+    description: "恋愛・ナンパに直結するマインドセットを丁寧に解説。小手先のテクニックではなく根本から変わりたい人に刺さる内容。",
     color: "text-gray-300",
   },
   {
     rank: 6,
-    id: "OIfUCai6QO0",
-    title: "ナンパ動画 第6位",
+    id: "EOIQlVc95uI",
+    title: "男磨き動画 第6位",
     views: "－",
-    description: "まさかの展開に視聴者騒然。「こんな子いるの？」とコメ欄が信じられない報告で溢れかえった注目作。",
-    color: "text-gray-300",
-  },
-  {
-    rank: 7,
-    id: "qYRS1k4h1CE",
-    title: "ナンパ動画 第7位",
-    views: "－",
-    description: "渋谷・新宿系ナンパの中でも一際クオリティが高い。相手の表情の変化が絶妙すぎてリピート再生が止まらない。",
-    color: "text-gray-300",
-  },
-  {
-    rank: 8,
-    id: "7yqlUIM30QI",
-    title: "ナンパ動画 第8位",
-    views: "－",
-    description: "素人感満載なのに結果だけは本物。地味に再生数を伸ばし続けているじわバズ系の注目チャンネル。",
-    color: "text-gray-300",
-  },
-  {
-    rank: 9,
-    id: "HU4t5vVmk-M",
-    title: "ナンパ動画 第9位",
-    views: "－",
-    description: "ランキング入りは9位だが内容は上位級。一度見たら忘れられない衝撃展開が詰まった必見動画。",
-    color: "text-gray-300",
-  },
-  {
-    rank: 10,
-    id: "P0nfhkNPd1I",
-    title: "ナンパ動画 第10位",
-    views: "－",
-    description: "10位ながら隠れファンが多い実力派動画。「地味に一番好き」というコメントが多く、リピーター率が異常に高い。",
-    color: "text-gray-300",
-  },
-  {
-    rank: 11,
-    id: "6By8kX8STnE",
-    title: "ナンパ動画 第11位",
-    views: "－",
-    description: "最新追加のダークホース。まだ知名度は低いが内容は圧倒的。今のうちに見ておかないと後悔する一本。",
+    description: "「なぜモテないのか」を徹底的に言語化した問題作。痛いところを突かれすぎてコメ欄が「刺さりすぎる」で埋まった必見動画。",
     color: "text-gray-300",
   },
 ];
 
-export default function NanpaPage() {
+export default function OtokoPage() {
   return (
     <div className="bg-gray-900 text-gray-200 font-sans min-h-screen">
       {/* ヘッダー */}
@@ -122,10 +82,10 @@ export default function NanpaPage() {
             <Link href="/" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
               散歩・ハプニング
             </Link>
-            <Link href="/nanpa" className="px-4 py-2 text-sm text-white bg-pink-700 border-b-2 border-pink-400 font-bold">
+            <Link href="/nanpa" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
               ナンパ動画
             </Link>
-            <Link href="/otoko" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">
+            <Link href="/otoko" className="px-4 py-2 text-sm text-white bg-pink-700 border-b-2 border-pink-400 font-bold whitespace-nowrap">
               男磨き
             </Link>
             <Link href="/kyaba" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">
@@ -142,14 +102,14 @@ export default function NanpaPage() {
       <section className="bg-gray-800 text-center py-10 px-4 border-b border-gray-700">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl md:text-4xl font-extrabold mb-4 leading-tight text-white">
-            今、YouTubeで一番スゴい。<br />
-            <span className="text-pink-500" style={{ textShadow: '0 0 5px #ec4899, 0 0 10px #ec4899' }}>神展開必至</span>のナンパ動画ランキング
+            モテたいなら今すぐ見ろ。<br />
+            <span className="text-pink-500" style={{ textShadow: '0 0 5px #ec4899, 0 0 10px #ec4899' }}>男が変わる</span>必見動画ランキング
           </h2>
           <p className="text-gray-400 mb-4 text-sm md:text-base">
-            再生回数急上昇中！消される前に絶対見ておきたい、リアルすぎるナンパ動画を厳選まとめ。
+            ナンパ・出会い・恋愛に直結する男磨き動画を厳選まとめ。見るだけで差がつく。
           </p>
           <p className="text-gray-500 text-xs leading-relaxed">
-            ナンパ / 即出会い / 素人 / 人妻ナンパ / 女子大生ナンパ / 声かけ / YouTube / xvideo超え / トランプ / まとめ
+            男磨き / モテる方法 / ナンパ上達 / 恋愛テクニック / 外見磨き / トーク術 / 出会い / 即 / まとめ
           </p>
         </div>
       </section>
@@ -157,7 +117,6 @@ export default function NanpaPage() {
       {/* メインコンテンツ */}
       <main className="container mx-auto px-4 max-w-3xl pb-16 mt-8">
 
-        {/* 最上部アフィリエイト誘導 */}
         <div className="bg-gradient-to-r from-pink-900 to-purple-900 rounded-lg p-5 mb-10 border border-pink-500 shadow-[0_0_15px_rgba(236,72,153,0.3)] animate-pulse hover:animate-none transition">
           <h3 className="flex items-center justify-center text-white font-bold text-lg mb-2">
             <AlertTriangle className="text-yellow-400 mr-2" size={20} />
@@ -173,7 +132,7 @@ export default function NanpaPage() {
         </div>
 
         <h3 className="flex items-center text-xl font-bold border-l-4 border-pink-500 pl-3 mb-6 text-white">
-          <Crown className="text-yellow-500 mr-2" size={24} /> ナンパ動画ランキング
+          <Crown className="text-yellow-500 mr-2" size={24} /> 男磨き動画ランキング
         </h3>
 
         {videos.map((video) => (
@@ -204,26 +163,6 @@ export default function NanpaPage() {
             </div>
           </div>
         ))}
-
-        {/* 出会い系アフィリエイトバナー */}
-        <div className="mb-10 flex flex-col items-center gap-2">
-          <a href="https://px.a8.net/svt/ejp?a8mat=4B1OTP+9IYGI+1J1E+5YJRL" rel="nofollow">
-            <img style={{ border: 0 }} width={468} height={60} alt="" src="https://www23.a8.net/svt/bgt?aid=260419309016&wid=001&eno=01&mid=s00000007133001001000&mc=1" />
-          </a>
-          <img style={{ border: 0 }} width={1} height={1} src="https://www14.a8.net/0.gif?a8mat=4B1OTP+9IYGI+1J1E+5YJRL" alt="" />
-        </div>
-
-        {/* 記事中アフィリエイト誘導 */}
-        <div className="my-10 p-6 bg-gray-800 border-2 border-dashed border-blue-500 rounded-lg text-center">
-          <h4 className="text-xl font-bold text-blue-400 mb-3">画面越しじゃ満足できないあなたへ</h4>
-          <p className="text-sm text-gray-400 mb-4">
-            「こんな子と実際に遊んでみたい…」<br />
-            最近、動画に出ているような素人系女子と出会える隠れ家アプリが話題です。登録は無料でプロフ見放題！
-          </p>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-200">
-            ナイショで出会いを探す <Search className="ml-2" size={18} />
-          </a>
-        </div>
 
         {/* A8.netバナー */}
         <div className="mt-6 mb-10 flex flex-col items-center gap-2">

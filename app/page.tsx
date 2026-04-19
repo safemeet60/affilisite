@@ -198,6 +198,14 @@ export default function App() {
           </a>
         </div>
 
+        {/* A8.netアフィリエイトバナー */}
+        <div className="mt-6 mb-10 flex flex-col items-center gap-2">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B1OTO+37I44Y+50+2I0IY9" rel="nofollow">
+            <img style={{ border: 0 }} width={468} height={60} alt="" src="https://www28.a8.net/svt/bgt?aid=260419308194&wid=001&eno=01&mid=s00000000018015119000&mc=1" />
+          </a>
+          <img style={{ border: 0 }} width={1} height={1} src="https://www17.a8.net/0.gif?a8mat=4B1OTO+37I44Y+50+2I0IY9" alt="" />
+        </div>
+
       </main>
 
       {/* フッター */}

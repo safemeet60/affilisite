@@ -36,12 +36,68 @@ const videos = [
   },
   {
     rank: 3,
-    id: "sFrZPfoyWOk", // ←ここを実際の動画IDに書き換える
+    id: "sFrZPfoyWOk",
     title: "【消された伝説のノーブラ散歩】東京スカイツリー",
     views: "85万回超",
     description: "本人は全く気づいていない様子ですが、視聴者からは「見えてる！」のコメントが殺到。アーカイブがいつ消されるか分からない必見動画です。",
     color: "text-orange-500",
-  }
+  },
+  {
+    rank: 4,
+    id: "RMwozcyVrog",
+    title: "人妻　ひとみさん",
+    views: "81万回超",
+    description: "人妻とは思えない大胆な行動に視聴者騒然。「これ本当に人妻？」とコメント欄が荒れまくった問題作。落ち着いた雰囲気からの急展開が最高すぎる。",
+    color: "text-pink-400",
+  },
+  {
+    rank: 5,
+    id: "9Uj8uv-vnTk",
+    title: "にどねちゃん",
+    views: "11万回超",
+    description: "まだ知名度は低いが、じわじわ再生数を伸ばしている要注目チャンネル。素朴な見た目からは想像できないギャップがヤバすぎる。早めにチェック必須！",
+    color: "text-gray-300",
+  },
+  {
+    rank: 6,
+    id: "OgM0v8r06gw",
+    title: "ひなちゃん家さん",
+    views: "39万回超",
+    description: "日常vlog系に見せかけた隠れた名作。何気ないシーンにファンが大興奮。「何度見ても飽きない」という神コメントが400件超え。",
+    color: "text-gray-300",
+  },
+  {
+    rank: 7,
+    id: "eMDoaP4HDjc",
+    title: "のんのんびよりさん",
+    views: "15万回超",
+    description: "田舎系チャンネルの意外なトップガン。のほほんとした雰囲気の中に潜む「お宝シーン」を求めてリピーターが続出。コメ欄は修羅場と化している。",
+    color: "text-gray-300",
+  },
+  {
+    rank: 8,
+    id: "f4e6phS2hjc",
+    title: "さくら先生さん",
+    views: "22万回超",
+    description: "先生系YouTuberの中でダントツの過激さ。授業中かと思いきや…という展開にコメ欄が「これは授業料払いたい」で埋め尽くされた伝説の動画。",
+    color: "text-gray-300",
+  },
+  {
+    rank: 9,
+    id: "53CnRuSuViI",
+    title: "るかさん",
+    views: "8.3万回超",
+    description: "まだ8万再生だが内容は100万再生級。これから絶対バズると確信できるクオリティ。消される前に今すぐ保存推奨。個人的に今一番推してるチャンネル。",
+    color: "text-gray-300",
+  },
+  {
+    rank: 10,
+    id: "C6-v4p0RJ7w",
+    title: "マイとユカさん",
+    views: "17万回超",
+    description: "2人組というのが最大の強み。掛け合いの中で起きるハプニングがとにかく自然すぎる。「これ本当に偶然？」と毎回議論になる名物チャンネル。",
+    color: "text-gray-300",
+  },
 ];
 
 export default function App() {

@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: "1Zq1Z5Ce5Tx1k65px6QBHmh9p9V1om3Nu6AwpbSkX5w",
+  },
   title: "待ちブラ・ノーブラ散歩動画ランキング【YouTube厳選まとめ】人妻・女子大生・ナンパ・出会い",
   description: "YouTubeで話題の待ちブラ・ノーブラ散歩・ハプニング動画を再生数ランキング形式で厳選まとめ。人妻・女子大生・ナンパ・即出会い系など刺激的なコンテンツを毎日更新。xvideoより過激な素人動画が無料で見放題！",
   keywords: "待ちブラ,ノーブラ散歩,スケブラ,透けブラ,ノーブラ,ノーパン,ハプニング,人妻,女子大生,ナンパ,即出会い,YouTube,xvideo,胸チラ,透け,トランプ,素人,まとめ",

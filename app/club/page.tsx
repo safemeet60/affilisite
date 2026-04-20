@@ -1,7 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import { AlertTriangle, ArrowRight, Crown, ExternalLink, Search } from 'lucide-react';
+import { AlertTriangle, ArrowRight, Crown, ExternalLink } from 'lucide-react';
 import ViewCount from '../components/ViewCount';
+import DmmProducts from '../components/DmmProducts';
+import LiveChatBanner from '../components/LiveChatBanner';
+import { fetchDmmItems } from '../lib/dmm';
 
 const YoutubeIcon = ({ className, size = 24 }: { className?: string; size?: number }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -17,6 +20,8 @@ const NavTabs = () => (
       <Link href="/otoko" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">男磨き</Link>
       <Link href="/kyaba" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">キャバ嬢</Link>
       <Link href="/club" className="px-4 py-2 text-sm text-white bg-pink-700 border-b-2 border-pink-400 font-bold whitespace-nowrap">ナイトクラブ</Link>
+      <Link href="/gal" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">ギャル</Link>
+      <Link href="/serebu" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">セレブ</Link>
     </div>
   </nav>
 );
@@ -56,7 +61,8 @@ const videos = [
   },
 ];
 
-export default function ClubPage() {
+export default async function ClubPage() {
+  const dmmItems = await fetchDmmItems('クラブ 素人 夜遊び');
   return (
     <div className="bg-gray-900 text-gray-200 font-sans min-h-screen">
       <header className="bg-gray-950 border-b border-pink-600 shadow-md sticky top-0 z-50">
@@ -92,7 +98,7 @@ export default function ClubPage() {
           <p className="text-center text-sm text-pink-200 mb-4">
             モザイクなし、規制なしの「本番」が見たいなら、DMMのプレミアムVODがおすすめ。今なら初回30日間無料でグラビア・大人向け作品が見放題！
           </p>
-          <a href="https://al.dmm.co.jp/..." target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-pink-600 hover:bg-pink-500 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-lg transition duration-200">
+          <a href="https://al.dmm.co.jp/?lurl=https%3A%2F%2Fwww.dmm.co.jp%2Fdigital%2Fvideoa%2F-%2Flist%2F%3Fsort%3Dranking&af_id=safemeet60-001&ch=toolbar&ch_id=link" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-pink-600 hover:bg-pink-500 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-lg transition duration-200">
             無料で過激な動画を見る（18禁） <ArrowRight className="ml-2" size={20} />
           </a>
           <p className="text-center text-xs text-gray-400 mt-2">※無料期間中に解約すれば0円です。</p>
@@ -127,6 +133,9 @@ export default function ClubPage() {
           </div>
         ))}
 
+        {/* DMM API 関連商品 */}
+        <DmmProducts items={dmmItems} title="クラブで出会う素人系作品はDMMで（18禁）" />
+
         <div className="mb-10 flex flex-col items-center gap-2">
           <a href="https://px.a8.net/svt/ejp?a8mat=4B1OTP+9IYGI+1J1E+5YJRL" rel="nofollow">
             <img style={{ border: 0 }} width={468} height={60} alt="" src="https://www23.a8.net/svt/bgt?aid=260419309016&wid=001&eno=01&mid=s00000007133001001000&mc=1" />
@@ -134,16 +143,8 @@ export default function ClubPage() {
           <img style={{ border: 0 }} width={1} height={1} src="https://www14.a8.net/0.gif?a8mat=4B1OTP+9IYGI+1J1E+5YJRL" alt="" />
         </div>
 
-        <div className="my-10 p-6 bg-gray-800 border-2 border-dashed border-blue-500 rounded-lg text-center">
-          <h4 className="text-xl font-bold text-blue-400 mb-3">画面越しじゃ満足できないあなたへ</h4>
-          <p className="text-sm text-gray-400 mb-4">
-            「こんな子と実際に遊んでみたい…」<br />
-            最近、動画に出ているような素人系女子と出会える隠れ家アプリが話題です。登録は無料でプロフ見放題！
-          </p>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-200">
-            ナイショで出会いを探す <Search className="ml-2" size={18} />
-          </a>
-        </div>
+        {/* DMM ライブチャット */}
+        <LiveChatBanner />
 
         <div className="mt-6 mb-10 flex flex-col items-center gap-2">
           <a href="https://px.a8.net/svt/ejp?a8mat=4B1OTO+37I44Y+50+2I0IY9" rel="nofollow">

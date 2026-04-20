@@ -1,7 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import { AlertTriangle, ArrowRight, Crown, ExternalLink, Search } from 'lucide-react';
+import { AlertTriangle, ArrowRight, Crown, ExternalLink } from 'lucide-react';
+import LiveChatBanner from './components/LiveChatBanner';
 import ViewCount from './components/ViewCount';
+import DmmProducts from './components/DmmProducts';
+import { fetchDmmItems } from './lib/dmm';
 
 // lucide-reactにないため、自作のYouTubeアイコンコンポーネントを作成
 const YoutubeIcon = ({ className, size = 24 }: { className?: string; size?: number }) => (
@@ -102,7 +105,8 @@ const videos = [
   },
 ];
 
-export default function App() {
+export default async function App() {
+  const dmmItems = await fetchDmmItems('素人 ハプニング');
   return (
     <div className="bg-gray-900 text-gray-200 font-sans min-h-screen">
       {/* ヘッダー */}
@@ -112,23 +116,15 @@ export default function App() {
           <span className="text-xs text-gray-400">🚨 閲覧注意 🚨</span>
         </div>
         {/* タブナビ */}
-        <nav className="bg-gray-900 border-t border-gray-700">
-          <div className="container mx-auto px-4 flex gap-1">
-            <Link href="/" className="px-4 py-2 text-sm text-white bg-pink-700 border-b-2 border-pink-400 font-bold whitespace-nowrap">
-              散歩・ハプニング
-            </Link>
-            <Link href="/nanpa" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">
-              ナンパ動画
-            </Link>
-            <Link href="/otoko" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">
-              男磨き
-            </Link>
-            <Link href="/kyaba" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">
-              キャバ嬢
-            </Link>
-            <Link href="/club" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">
-              ナイトクラブ
-            </Link>
+        <nav className="bg-gray-900 border-t border-gray-700 overflow-x-auto">
+          <div className="container mx-auto px-4 flex gap-1 min-w-max">
+            <Link href="/" className="px-4 py-2 text-sm text-white bg-pink-700 border-b-2 border-pink-400 font-bold whitespace-nowrap">散歩・ハプニング</Link>
+            <Link href="/nanpa" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">ナンパ動画</Link>
+            <Link href="/otoko" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">男磨き</Link>
+            <Link href="/kyaba" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">キャバ嬢</Link>
+            <Link href="/club" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">ナイトクラブ</Link>
+            <Link href="/gal" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">ギャル</Link>
+            <Link href="/serebu" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">セレブ</Link>
           </div>
         </nav>
       </header>
@@ -162,7 +158,7 @@ export default function App() {
             モザイクなし、規制なしの「本番」が見たいなら、DMMのプレミアムVODがおすすめ。今なら初回30日間無料でグラビア・大人向け作品が見放題！
           </p>
           {/* ↓ここにDMMアフィリエイトのリンク（URL）を入れます */}
-          <a href="https://al.dmm.co.jp/..." target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-pink-600 hover:bg-pink-500 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-lg transition duration-200">
+          <a href="https://al.dmm.co.jp/?lurl=https%3A%2F%2Fwww.dmm.co.jp%2Fdigital%2Fvideoa%2F-%2Flist%2F%3Fsort%3Dranking&af_id=safemeet60-001&ch=toolbar&ch_id=link" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-pink-600 hover:bg-pink-500 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-lg transition duration-200">
             無料で過激な動画を見る（18禁） <ArrowRight className="ml-2" size={20} />
           </a>
           <p className="text-center text-xs text-gray-400 mt-2">※無料期間中に解約すれば0円です。</p>
@@ -210,6 +206,9 @@ export default function App() {
           </div>
         ))}
 
+        {/* DMM API 関連商品 */}
+        <DmmProducts items={dmmItems} title="YouTubeより過激な素人・ハプニング作品（DMMで見る）" />
+
         {/* 出会い系アフィリエイトバナー（10位直後） */}
         <div className="mb-10 flex flex-col items-center gap-2">
           <a href="https://px.a8.net/svt/ejp?a8mat=4B1OTP+9IYGI+1J1E+5YJRL" rel="nofollow">
@@ -218,18 +217,8 @@ export default function App() {
           <img style={{ border: 0 }} width={1} height={1} src="https://www14.a8.net/0.gif?a8mat=4B1OTP+9IYGI+1J1E+5YJRL" alt="" />
         </div>
 
-        {/* 【重要】記事中アフィリエイト誘導 */}
-        <div className="my-10 p-6 bg-gray-800 border-2 border-dashed border-blue-500 rounded-lg text-center">
-          <h4 className="text-xl font-bold text-blue-400 mb-3">画面越しじゃ満足できないあなたへ</h4>
-          <p className="text-sm text-gray-400 mb-4">
-            「こんな子と実際に遊んでみたい…」<br />
-            最近、動画に出ているような素人系女子と出会える隠れ家アプリが話題です。登録は無料でプロフ見放題！
-          </p>
-          {/* ↓ここに出会い系アフィリエイトのリンク（URL）を入れます */}
-          <a href="#" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-200">
-            ナイショで出会いを探す <Search className="ml-2" size={18} />
-          </a>
-        </div>
+        {/* DMM ライブチャット */}
+        <LiveChatBanner />
 
         {/* A8.netアフィリエイトバナー */}
         <div className="mt-6 mb-10 flex flex-col items-center gap-2">

@@ -7,14 +7,7 @@ import LiveChatBanner from '../components/LiveChatBanner';
 import { fetchDmmItems } from '../lib/dmm';
 
 const YoutubeIcon = ({ className, size = 24 }: { className?: string; size?: number }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    className={className}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
     <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
   </svg>
 );
@@ -25,10 +18,10 @@ const NavTabs = () => (
       <Link href="/" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">散歩・ハプニング</Link>
       <Link href="/nanpa" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">ナンパ動画</Link>
       <Link href="/otoko" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">男磨き</Link>
-      <Link href="/kyaba" className="px-4 py-2 text-sm text-white bg-pink-700 border-b-2 border-pink-400 font-bold whitespace-nowrap">キャバ嬢</Link>
+      <Link href="/kyaba" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">キャバ嬢</Link>
       <Link href="/club" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">ナイトクラブ</Link>
       <Link href="/gal" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">ギャル</Link>
-      <Link href="/serebu" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">セレブ</Link>
+      <Link href="/serebu" className="px-4 py-2 text-sm text-white bg-pink-700 border-b-2 border-pink-400 font-bold whitespace-nowrap">セレブ</Link>
     </div>
   </nav>
 );
@@ -36,64 +29,49 @@ const NavTabs = () => (
 const videos = [
   {
     rank: 1,
-    id: "srCb8EoiMj8",
-    title: "キャバ嬢動画 第1位",
+    id: "PU5KhrsGI8w",
+    title: "セレブ動画 第1位",
     views: "－",
-    description: "現役キャバ嬢のリアルな素顔に迫った動画。お店では見せない表情や本音トークが炸裂。「こんな子と話したい」とコメ欄が大盛り上がり。",
+    description: "富裕層・セレブ女性のリアルな素顔に迫った衝撃作。「こんな世界が存在するのか」とコメ欄が騒然。一般人には縁のないはずの世界がそこにある。",
     color: "text-yellow-500",
   },
   {
     rank: 2,
-    id: "kMLJMh0x6Nk",
-    title: "キャバ嬢動画 第2位",
+    id: "RaFWZahHBoA",
+    title: "セレブ動画 第2位",
     views: "－",
-    description: "トップキャバ嬢が語るモテる男の条件が赤裸々すぎると話題。「これを聞いてから通い方が変わった」という声が続出。必見。",
+    description: "セレブ妻の本音が炸裂する問題作。お金持ちの生活の裏側で起きていることが赤裸々に暴露され、コメ欄が「やっぱりそうなの？」で埋まった。",
     color: "text-gray-300",
   },
   {
     rank: 3,
-    id: "_EbvhBxjYD4",
-    title: "キャバ嬢動画 第3位",
+    id: "UaepynF5-cU",
+    title: "セレブ動画 第3位",
     views: "－",
-    description: "キャバクラの裏側を包み隠さず暴露。「キャバ嬢って実はこう思ってるの？」とコメ欄が衝撃の声で溢れかえった問題作。",
+    description: "高級マンション・高級車・高級レストラン…華やかな日常の中に潜む刺激的な展開が視聴者を虜に。「一回でいいからこういう体験してみたい」とリクエスト殺到。",
     color: "text-orange-500",
   },
   {
     rank: 4,
-    id: "gj-zWrVhqOE",
-    title: "キャバ嬢動画 第4位",
+    id: "blRRZ5iq-x8",
+    title: "セレブ動画 第4位",
     views: "－",
-    description: "可愛すぎるキャバ嬢がプライベートを大公開。お店の外でのギャップが衝撃的すぎて「本当に同一人物？」とコメ欄騒然。",
+    description: "セレブ系チャンネルの中でも特に再生数を伸ばしている注目作。上品な外見とのギャップが激しすぎて「この子は本当にセレブなの？」と議論を呼んだ。",
     color: "text-pink-400",
   },
   {
     rank: 5,
-    id: "iETjq8CqPwQ",
-    title: "キャバ嬢動画 第5位",
+    id: "S1i0b3cI4sA",
+    title: "セレブ動画 第5位",
     views: "－",
-    description: "指名No.1キャバ嬢の接客術が神すぎる。「なぜ彼女が売れるのか一瞬でわかった」と絶賛の声が止まらない。",
-    color: "text-gray-300",
-  },
-  {
-    rank: 6,
-    id: "YT-RudzMnG0",
-    title: "キャバ嬢動画 第6位",
-    views: "－",
-    description: "キャバ嬢が本音で語る「好きな客・嫌いな客」。耳の痛い話ばかりで「全男性に見てほしい」と女性からも支持を集める。",
-    color: "text-gray-300",
-  },
-  {
-    rank: 7,
-    id: "oOfj8ILLKqQ",
-    title: "キャバ嬢動画 第7位",
-    views: "－",
-    description: "夜の世界のリアルを赤裸々に語る元キャバ嬢の告白動画。「知らなかった事実ばかりで衝撃」とコメ欄が荒れまくった話題作。",
+    description: "セレブ女性の「夜の顔」に迫った必見動画。「お金持ちってこういうことするんだ」と視聴者の固定観念をぶち壊した話題作。リピーター率が異常に高い。",
     color: "text-gray-300",
   },
 ];
 
-export default async function KyabaPage() {
-  const dmmItems = await fetchDmmItems('キャバ嬢 お水');
+export default async function SerebuPage() {
+  const dmmItems = await fetchDmmItems('人妻 セレブ');
+
   return (
     <div className="bg-gray-900 text-gray-200 font-sans min-h-screen">
       <header className="bg-gray-950 border-b border-pink-600 shadow-md sticky top-0 z-50">
@@ -107,14 +85,14 @@ export default async function KyabaPage() {
       <section className="bg-gray-800 text-center py-10 px-4 border-b border-gray-700">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl md:text-4xl font-extrabold mb-4 leading-tight text-white">
-            夜の女王たちの素顔。<br />
-            <span className="text-pink-500" style={{ textShadow: '0 0 5px #ec4899, 0 0 10px #ec4899' }}>キャバ嬢リアル</span>動画ランキング
+            格が違う、次元が違う。<br />
+            <span className="text-pink-500" style={{ textShadow: '0 0 5px #ec4899, 0 0 10px #ec4899' }}>セレブ女性</span>動画ランキング
           </h2>
           <p className="text-gray-400 mb-4 text-sm md:text-base">
-            現役・元キャバ嬢が語る本音トーク・暴露・プライベートを厳選まとめ。
+            普通の人には縁がない富裕層・セレブ女性の素顔。YouTubeで一番話題のセレブ系動画を厳選まとめ。
           </p>
           <p className="text-gray-500 text-xs leading-relaxed">
-            キャバ嬢 / キャバクラ / 夜職 / 暴露 / 本音 / ナイトワーク / 出会い / 素顔 / まとめ
+            セレブ / 富裕層 / 人妻 / セレブ妻 / 高級 / リアル素顔 / 出会い / まとめ
           </p>
         </div>
       </section>
@@ -136,7 +114,7 @@ export default async function KyabaPage() {
         </div>
 
         <h3 className="flex items-center text-xl font-bold border-l-4 border-pink-500 pl-3 mb-6 text-white">
-          <Crown className="text-yellow-500 mr-2" size={24} /> キャバ嬢動画ランキング
+          <Crown className="text-yellow-500 mr-2" size={24} /> セレブ動画ランキング
         </h3>
 
         {videos.map((video) => (
@@ -150,11 +128,7 @@ export default async function KyabaPage() {
             </div>
             <div className="p-4">
               <a href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer" className="block w-full aspect-video bg-black flex-col items-center justify-center rounded-md mb-4 relative overflow-hidden group border border-gray-600">
-                <img
-                  src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
-                  alt={video.title}
-                  className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition duration-300"
-                />
+                <img src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`} alt={video.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition duration-300" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                   <YoutubeIcon className="text-red-600 drop-shadow-[0_0_8px_rgba(255,0,0,0.8)] group-hover:scale-110 transition duration-300" size={64} />
                   <span className="text-white font-bold mt-2 opacity-0 group-hover:opacity-100 transition duration-300">YouTubeで見る</span>
@@ -169,17 +143,18 @@ export default async function KyabaPage() {
         ))}
 
         {/* DMM API 関連商品 */}
-        <DmmProducts items={dmmItems} title="YouTubeより過激なキャバ嬢・お水系作品（DMMで見る）" />
+        <DmmProducts items={dmmItems} title="本物のセレブ・人妻系作品はDMMで（18禁）" />
 
+        {/* DMM ライブチャット */}
+        <LiveChatBanner />
+
+        {/* A8.netバナー */}
         <div className="mb-10 flex flex-col items-center gap-2">
           <a href="https://px.a8.net/svt/ejp?a8mat=4B1OTP+9IYGI+1J1E+5YJRL" rel="nofollow">
             <img style={{ border: 0 }} width={468} height={60} alt="" src="https://www23.a8.net/svt/bgt?aid=260419309016&wid=001&eno=01&mid=s00000007133001001000&mc=1" />
           </a>
           <img style={{ border: 0 }} width={1} height={1} src="https://www14.a8.net/0.gif?a8mat=4B1OTP+9IYGI+1J1E+5YJRL" alt="" />
         </div>
-
-        {/* DMM ライブチャット */}
-        <LiveChatBanner />
 
         <div className="mt-6 mb-10 flex flex-col items-center gap-2">
           <a href="https://px.a8.net/svt/ejp?a8mat=4B1OTO+37I44Y+50+2I0IY9" rel="nofollow">

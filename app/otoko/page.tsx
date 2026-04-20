@@ -2,6 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import { AlertTriangle, ArrowRight, Crown, ExternalLink } from 'lucide-react';
 import ViewCount from '../components/ViewCount';
+import DmmProducts from '../components/DmmProducts';
+import LiveChatBanner from '../components/LiveChatBanner';
+import { fetchDmmItems } from '../lib/dmm';
 
 const YoutubeIcon = ({ className, size = 24 }: { className?: string; size?: number }) => (
   <svg
@@ -67,7 +70,8 @@ const videos = [
   },
 ];
 
-export default function OtokoPage() {
+export default async function OtokoPage() {
+  const dmmItems = await fetchDmmItems('女子大生');
   return (
     <div className="bg-gray-900 text-gray-200 font-sans min-h-screen">
       {/* ヘッダー */}
@@ -77,23 +81,15 @@ export default function OtokoPage() {
           <span className="text-xs text-gray-400">🚨 閲覧注意 🚨</span>
         </div>
         {/* タブナビ */}
-        <nav className="bg-gray-900 border-t border-gray-700">
-          <div className="container mx-auto px-4 flex gap-1">
-            <Link href="/" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
-              散歩・ハプニング
-            </Link>
-            <Link href="/nanpa" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
-              ナンパ動画
-            </Link>
-            <Link href="/otoko" className="px-4 py-2 text-sm text-white bg-pink-700 border-b-2 border-pink-400 font-bold whitespace-nowrap">
-              男磨き
-            </Link>
-            <Link href="/kyaba" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">
-              キャバ嬢
-            </Link>
-            <Link href="/club" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">
-              ナイトクラブ
-            </Link>
+        <nav className="bg-gray-900 border-t border-gray-700 overflow-x-auto">
+          <div className="container mx-auto px-4 flex gap-1 min-w-max">
+            <Link href="/" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">散歩・ハプニング</Link>
+            <Link href="/nanpa" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">ナンパ動画</Link>
+            <Link href="/otoko" className="px-4 py-2 text-sm text-white bg-pink-700 border-b-2 border-pink-400 font-bold whitespace-nowrap">男磨き</Link>
+            <Link href="/kyaba" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">キャバ嬢</Link>
+            <Link href="/club" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">ナイトクラブ</Link>
+            <Link href="/gal" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">ギャル</Link>
+            <Link href="/serebu" className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition whitespace-nowrap">セレブ</Link>
           </div>
         </nav>
       </header>
@@ -125,7 +121,7 @@ export default function OtokoPage() {
           <p className="text-center text-sm text-pink-200 mb-4">
             モザイクなし、規制なしの「本番」が見たいなら、DMMのプレミアムVODがおすすめ。今なら初回30日間無料でグラビア・大人向け作品が見放題！
           </p>
-          <a href="https://al.dmm.co.jp/..." target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-pink-600 hover:bg-pink-500 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-lg transition duration-200">
+          <a href="https://al.dmm.co.jp/?lurl=https%3A%2F%2Fwww.dmm.co.jp%2Fdigital%2Fvideoa%2F-%2Flist%2F%3Fsort%3Dranking&af_id=safemeet60-001&ch=toolbar&ch_id=link" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-pink-600 hover:bg-pink-500 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-lg transition duration-200">
             無料で過激な動画を見る（18禁） <ArrowRight className="ml-2" size={20} />
           </a>
           <p className="text-center text-xs text-gray-400 mt-2">※無料期間中に解約すれば0円です。</p>
@@ -163,6 +159,12 @@ export default function OtokoPage() {
             </div>
           </div>
         ))}
+
+        {/* DMM API 関連商品 */}
+        <DmmProducts items={dmmItems} title="モテたいなら本物の展開を見ておけ（DMMで見る）" />
+
+        {/* DMM ライブチャット */}
+        <LiveChatBanner />
 
         {/* A8.netバナー */}
         <div className="mt-6 mb-10 flex flex-col items-center gap-2">

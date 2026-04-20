@@ -35,7 +35,27 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        {/* 左サイドバー広告（デスクトップのみ） */}
+        <div className="hidden xl:block fixed left-2 top-1/3 z-40" style={{width: '200px', height: '100px', overflow: 'hidden'}}>
+          <iframe
+            frameBorder="0"
+            scrolling="no"
+            src="https://livechat.dmm.co.jp/publicads?&size=L&design=A&affiliate_id=safemeet60-001"
+            style={{width: '640px', height: '200px', transform: 'scale(0.5)', transformOrigin: 'top left'}}
+          />
+        </div>
+        {/* 右サイドバー広告（デスクトップのみ） */}
+        <div className="hidden xl:block fixed right-2 top-1/3 z-40" style={{width: '200px', height: '100px', overflow: 'hidden'}}>
+          <iframe
+            frameBorder="0"
+            scrolling="no"
+            src="https://livechat.dmm.co.jp/publicads?&size=L&design=A&affiliate_id=safemeet60-001"
+            style={{width: '640px', height: '200px', transform: 'scale(0.5)', transformOrigin: 'top left'}}
+          />
+        </div>
+      </body>
       <Script
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
